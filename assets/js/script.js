@@ -58,11 +58,11 @@ function passwordOptions() {
 
   // https://www.w3schools.com/js/js_objects.asp
   var options = {
-    length : passwordLength,
-    specialChar : hasSpecialChar,
-    numbers : hasNumbers,
-    lowerCaseChar : hasLowercaseChar,
-    upperCase : hasUppercaseChar
+    length: passwordLength,
+    specialChar: hasSpecialChar,
+    numbers: hasNumbers,
+    lowerCaseChar: hasLowercaseChar,
+    upperCaseChar: hasUppercaseChar
   };
 
   // RETURNS THE LIST OF OPTIONS WHEN THE FUNCTION 'passwordOptions' is called
@@ -73,16 +73,46 @@ function passwordOptions() {
 function generatePassword() {
   // GET OPTIONS FOR PASSWORD
   var options = passwordOptions();
-  
+
+  // NEW PASSWORD
   var newPassword = [];
   var possbile = [];
   var guaranteed = [];
 
-  if(options.hasSpecialChar === true) {
+  // CHECKS TO SEE IF SPECIAL CHAR IS TRUE
+  if (options.specialChar === true) {
     possbile = possbile.concat(specialChar);
     guaranteed.push(random(specialChar));
   }
-  //ADD OTHER OPTIONS
+
+  // CHECKS TO SEE IF NUMBERS IS TRUE
+  if (options.numbers === true) {
+    possbile = possbile.concat(numbers);
+    guaranteed.push(random(numbers));
+  }
+
+  // CHECKS TO SEE IF LOWERCASE CHAR IS TRUE
+  if (options.lowerCaseChar === true) {
+    possbile = possbile.concat(lowerCaseChar);
+    guaranteed.push(random(lowerCaseChar));
+  }
+
+  // CHECKS TO SEE IF UPPERCASE CHAR IS TRUE
+  if (options.upperCaseChar === true) {
+    possbile = possbile.concat(upperCaseChar);
+    guaranteed.push(random(upperCaseChar));
+  }
+
+  for (var index = 0; index < options.length; index++) {
+    var character = random(possbile);
+    newPassword.push(character);
+  }
+
+  for (var index = 0; index < guaranteed.length; index++) {
+    newPassword[index] = guaranteed[index];
+  }
+
+  return newPassword.join('');
 }
 
 // Assignment Code
@@ -96,4 +126,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", generatePassword);
+generateBtn.addEventListener("click", writePassword);
