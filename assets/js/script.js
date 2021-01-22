@@ -5,6 +5,12 @@ var upperCaseChar = ['A', 'B', 'C', 'D', 'E', 'G', 'G', 'H', 'I', 'J', 'K', 'L',
 // !@#$%^&*()_+[]{}~./- Could possibly be more
 var specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '[', ']', '{', '}', '~', '.', '/', '-'];
 
+// GET RANDOM ELEMENT FROM ARRAY THAT IS PASSED IN, RESULT IS RETURNED.
+function random(random) {
+  var randomIndexForArray = Math.floor(Math.random() * random.length);
+  var el = random[randomIndexForArray];
+  return el;
+}
 
 // FUNCTION TO GET INPUT FROM THE USER
 function passwordOptions() {
@@ -59,8 +65,24 @@ function passwordOptions() {
     upperCase : hasUppercaseChar
   };
 
+  // RETURNS THE LIST OF OPTIONS WHEN THE FUNCTION 'passwordOptions' is called
   console.log(options);
   return options;
+}
+
+function generatePassword() {
+  // GET OPTIONS FOR PASSWORD
+  var options = passwordOptions();
+  
+  var newPassword = [];
+  var possbile = [];
+  var guaranteed = [];
+
+  if(options.hasSpecialChar === true) {
+    possbile = possbile.concat(specialChar);
+    guaranteed.push(random(specialChar));
+  }
+  //ADD OTHER OPTIONS
 }
 
 // Assignment Code
@@ -74,4 +96,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", passwordOptions);
+generateBtn.addEventListener("click", generatePassword);
