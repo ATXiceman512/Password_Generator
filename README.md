@@ -3,8 +3,22 @@
 ## URL to application
 https://atxiceman512.github.io/Password_Generator/index.html
 
-## Screenshot of application
-![Index.html(FrontEnd) screenshot](./assets/images/pw_generator_main.PNG "Main Password Generator")
+## Screenshots of application
+
+### Screenshot of the UI
+![Index.html(FrontEnd) screenshot](./assets/images/pw_generator_main.PNG "Main Password Generator Screenshot")
+
+### Screenshot of Character Count
+![Index.html(FrontEnd) screenshot](./assets/images/charCountScreenshot.PNG "Character Count")
+
+#### Screenshot of Character Count Error
+![Index.html(FrontEnd) screenshot](./assets/images/invalidCharacterCount.PNG "Invalid Character Count")
+
+### Screenshot of No Character Selected
+![Index.html(FrontEnd) screenshot](./assets/images/noCharSelectedError.PNG "No Character Type Selected")
+
+### Screenshot of Successful PW generation
+![Index.html(FrontEnd) screenshot](./assets/images/success.PNG "Success Message")
 
 ## USER STORY
 AS AN employee with access to sensitive data
